@@ -38,25 +38,16 @@ export const Header: React.FC = () => {
       backgroundColor: 'transparent',
       color: '#065fd4',
       border: '1px solid #065fd4',
-      '&:hover': {
-        backgroundColor: '#f2f8ff',
-      }
     },
     register: {
       backgroundColor: '#065fd4',
       color: 'white',
       border: 'none',
-      '&:hover': {
-        backgroundColor: '#0356c6',
-      }
     },
     logout: {
       backgroundColor: '#f2f2f2',
       color: '#606060',
       border: 'none',
-      '&:hover': {
-        backgroundColor: '#e5e5e5',
-      }
     }
   };
 
@@ -101,10 +92,12 @@ export const Header: React.FC = () => {
           <>
             <button
               onClick={() => navigate('/login')}
-              style={{ 
-                ...buttonStyles.base, 
-                ...buttonStyles.login,
-                ':hover': { backgroundColor: '#f2f8ff' }
+              style={{ ...buttonStyles.base, ...buttonStyles.login }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#f2f8ff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
               }}
             >
               Войти
@@ -113,10 +106,12 @@ export const Header: React.FC = () => {
               onClick={() => {
                 navigate('/login');
               }}
-              style={{ 
-                ...buttonStyles.base, 
-                ...buttonStyles.register,
-                ':hover': { backgroundColor: '#0356c6' }
+              style={{ ...buttonStyles.base, ...buttonStyles.register }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#0356c6';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#065fd4';
               }}
             >
               Регистрация
@@ -125,10 +120,12 @@ export const Header: React.FC = () => {
         ) : (
           <button
             onClick={handleLogout}
-            style={{ 
-              ...buttonStyles.base, 
-              ...buttonStyles.logout,
-              ':hover': { backgroundColor: '#e5e5e5' }
+            style={{ ...buttonStyles.base, ...buttonStyles.logout }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#e5e5e5';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#f2f2f2';
             }}
           >
             Выйти
