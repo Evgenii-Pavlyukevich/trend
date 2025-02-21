@@ -38,31 +38,39 @@ export const Login: React.FC = () => {
       justifyContent: 'center',
       alignItems: 'center',
       minHeight: 'calc(100vh - 72px)',
-      padding: '1rem'
+      padding: '1rem',
+      backgroundColor: '#f9f9f9'
     }}>
       <div style={{
         backgroundColor: 'white',
-        padding: '2rem',
+        padding: '3rem 2.5rem',
         borderRadius: '8px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
         width: '100%',
-        maxWidth: '400px'
+        maxWidth: '450px'
       }}>
         <h1 style={{ 
           textAlign: 'center',
-          marginBottom: '1.5rem'
+          marginBottom: '2rem',
+          fontSize: '24px',
+          color: '#282828',
+          fontWeight: '400'
         }}>
-          {isLogin ? 'Войти' : 'Регистрация'}
+          {isLogin ? 'Войти' : 'Создать аккаунт'}
         </h1>
         {error && <p style={{ 
-          color: 'red',
+          color: '#c00',
           textAlign: 'center',
-          marginBottom: '1rem'
+          marginBottom: '1rem',
+          padding: '0.75rem',
+          backgroundColor: '#fce8e8',
+          borderRadius: '4px',
+          fontSize: '14px'
         }}>{error}</p>}
         <form onSubmit={handleSubmit} style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '1rem'
+          gap: '1.25rem'
         }}>
           <input
             type="email"
@@ -70,38 +78,46 @@ export const Login: React.FC = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={{
-              padding: '10px',
-              fontSize: '16px',
+              padding: '12px',
+              fontSize: '15px',
               borderRadius: '4px',
-              border: '1px solid #ccc'
+              border: '1px solid #ccc',
+              backgroundColor: '#f9f9f9',
+              transition: 'all 0.2s ease',
+              outline: 'none',
             }}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{
-              padding: '10px',
-              fontSize: '16px',
+              padding: '12px',
+              fontSize: '15px',
               borderRadius: '4px',
-              border: '1px solid #ccc'
+              border: '1px solid #ccc',
+              backgroundColor: '#f9f9f9',
+              transition: 'all 0.2s ease',
+              outline: 'none',
             }}
           />
           <button
             type="submit"
             style={{
               padding: '12px',
-              fontSize: '16px',
+              fontSize: '15px',
               cursor: 'pointer',
-              backgroundColor: '#4285f4',
+              backgroundColor: '#065fd4',
               color: 'white',
               border: 'none',
-              borderRadius: '4px',
-              marginTop: '0.5rem'
+              borderRadius: '20px',
+              marginTop: '0.5rem',
+              fontWeight: '500',
+              transition: 'background-color 0.2s ease'
             }}
           >
-            {isLogin ? 'Войти' : 'Зарегистрироваться'}
+            {isLogin ? 'Войти' : 'Создать'}
           </button>
         </form>
         <button
@@ -109,15 +125,15 @@ export const Login: React.FC = () => {
           style={{
             background: 'none',
             border: 'none',
-            color: '#4285f4',
+            color: '#065fd4',
             cursor: 'pointer',
-            textDecoration: 'underline',
             width: '100%',
-            marginTop: '1rem',
-            fontSize: '14px'
+            marginTop: '1.5rem',
+            fontSize: '14px',
+            fontWeight: '500'
           }}
         >
-          {isLogin ? 'Нет аккаунта? Зарегистрируйтесь' : 'Уже есть аккаунт? Войдите'}
+          {isLogin ? 'Нет аккаунта? Создать' : 'Уже есть аккаунт? Войти'}
         </button>
       </div>
     </div>

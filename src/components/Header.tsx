@@ -27,25 +27,36 @@ export const Header: React.FC = () => {
 
   const buttonStyles = {
     base: {
-      padding: isMobile ? '6px 12px' : '8px 16px',
-      fontSize: isMobile ? '12px' : '14px',
+      padding: isMobile ? '8px 12px' : '10px 16px',
+      fontSize: isMobile ? '14px' : '14px',
       cursor: 'pointer',
-      borderRadius: '4px',
+      borderRadius: '20px',
+      fontWeight: 500,
+      transition: 'all 0.2s ease',
     },
     login: {
       backgroundColor: 'transparent',
-      color: '#4285f4',
-      border: '1px solid #4285f4',
+      color: '#065fd4',
+      border: '1px solid #065fd4',
+      '&:hover': {
+        backgroundColor: '#f2f8ff',
+      }
     },
     register: {
-      backgroundColor: '#4285f4',
+      backgroundColor: '#065fd4',
       color: 'white',
       border: 'none',
+      '&:hover': {
+        backgroundColor: '#0356c6',
+      }
     },
     logout: {
-      backgroundColor: '#dc3545',
-      color: 'white',
+      backgroundColor: '#f2f2f2',
+      color: '#606060',
       border: 'none',
+      '&:hover': {
+        backgroundColor: '#e5e5e5',
+      }
     }
   };
 
@@ -54,46 +65,59 @@ export const Header: React.FC = () => {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '1rem',
+      padding: '0.8rem 1.5rem',
       backgroundColor: 'white',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       position: 'fixed',
       top: 0,
       left: 0,
       right: 0,
       zIndex: 1000,
+      height: '56px',
     }}>
       <div style={{
-        width: '40px',
-        height: '40px',
-        backgroundColor: '#ddd', // Placeholder for logo
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        gap: '1rem',
       }}>
-        {/* Logo placeholder */}
-        Logo
+        <div style={{
+          width: '90px',
+          height: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          fontSize: '20px',
+          fontWeight: 'bold',
+          color: '#282828',
+        }}>
+          TREND
+        </div>
       </div>
 
       <div style={{
         display: 'flex',
-        gap: isMobile ? '0.5rem' : '1rem',
+        gap: isMobile ? '0.5rem' : '0.75rem',
       }}>
         {!currentUser ? (
           <>
             <button
               onClick={() => navigate('/login')}
-              style={{ ...buttonStyles.base, ...buttonStyles.login }}
+              style={{ 
+                ...buttonStyles.base, 
+                ...buttonStyles.login,
+                ':hover': { backgroundColor: '#f2f8ff' }
+              }}
             >
               Войти
             </button>
             <button
               onClick={() => {
                 navigate('/login');
-                // You might want to add state to indicate registration mode
-                // This would require modifying your Login component to accept and handle this state
               }}
-              style={{ ...buttonStyles.base, ...buttonStyles.register }}
+              style={{ 
+                ...buttonStyles.base, 
+                ...buttonStyles.register,
+                ':hover': { backgroundColor: '#0356c6' }
+              }}
             >
               Регистрация
             </button>
@@ -101,7 +125,11 @@ export const Header: React.FC = () => {
         ) : (
           <button
             onClick={handleLogout}
-            style={{ ...buttonStyles.base, ...buttonStyles.logout }}
+            style={{ 
+              ...buttonStyles.base, 
+              ...buttonStyles.logout,
+              ':hover': { backgroundColor: '#e5e5e5' }
+            }}
           >
             Выйти
           </button>

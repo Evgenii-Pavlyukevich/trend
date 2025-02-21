@@ -10,9 +10,17 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5' }}>
+        <div style={{ 
+          minHeight: '100vh', 
+          backgroundColor: '#f9f9f9',
+          fontFamily: 'Roboto, Arial, sans-serif'
+        }}>
           <Header />
-          <main style={{ paddingTop: '72px' }}>
+          <main style={{ 
+            paddingTop: '56px',
+            minHeight: 'calc(100vh - 56px)',
+            width: '100%'
+          }}>
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route
