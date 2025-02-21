@@ -30,17 +30,17 @@ export const Header: React.FC = () => {
       padding: isMobile ? '8px 12px' : '10px 16px',
       fontSize: isMobile ? '14px' : '14px',
       cursor: 'pointer',
-      borderRadius: '20px',
+      borderRadius: '4px',
       fontWeight: 500,
       transition: 'all 0.2s ease',
     },
     login: {
       backgroundColor: 'transparent',
-      color: '#065fd4',
-      border: '1px solid #065fd4',
+      color: '#FF0000',
+      border: '1px solid #FF0000',
     },
     register: {
-      backgroundColor: '#065fd4',
+      backgroundColor: '#FF0000',
       color: 'white',
       border: 'none',
     },
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
           alignItems: 'center',
           fontSize: '20px',
           fontWeight: 'bold',
-          color: '#282828',
+          color: '#FF0000',
         }}>
           TREND
         </div>
@@ -94,7 +94,7 @@ export const Header: React.FC = () => {
               onClick={() => navigate('/login')}
               style={{ ...buttonStyles.base, ...buttonStyles.login }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#f2f8ff';
+                e.currentTarget.style.backgroundColor = '#fff2f2';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
@@ -108,10 +108,10 @@ export const Header: React.FC = () => {
               }}
               style={{ ...buttonStyles.base, ...buttonStyles.register }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#0356c6';
+                e.currentTarget.style.backgroundColor = '#cc0000';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#065fd4';
+                e.currentTarget.style.backgroundColor = '#FF0000';
               }}
             >
               Регистрация

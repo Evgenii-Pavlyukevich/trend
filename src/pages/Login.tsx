@@ -44,7 +44,7 @@ export const Login: React.FC = () => {
       <div style={{
         backgroundColor: 'white',
         padding: '3rem 2.5rem',
-        borderRadius: '8px',
+        borderRadius: '4px',
         boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
         width: '100%',
         maxWidth: '450px'
@@ -59,11 +59,11 @@ export const Login: React.FC = () => {
           {isLogin ? 'Войти' : 'Создать аккаунт'}
         </h1>
         {error && <p style={{ 
-          color: '#c00',
+          color: '#FF0000',
           textAlign: 'center',
           marginBottom: '1rem',
           padding: '0.75rem',
-          backgroundColor: '#fce8e8',
+          backgroundColor: '#fff2f2',
           borderRadius: '4px',
           fontSize: '14px'
         }}>{error}</p>}
@@ -108,13 +108,19 @@ export const Login: React.FC = () => {
               padding: '12px',
               fontSize: '15px',
               cursor: 'pointer',
-              backgroundColor: '#065fd4',
+              backgroundColor: '#FF0000',
               color: 'white',
               border: 'none',
-              borderRadius: '20px',
+              borderRadius: '4px',
               marginTop: '0.5rem',
               fontWeight: '500',
               transition: 'background-color 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#cc0000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FF0000';
             }}
           >
             {isLogin ? 'Войти' : 'Создать'}
@@ -125,7 +131,7 @@ export const Login: React.FC = () => {
           style={{
             background: 'none',
             border: 'none',
-            color: '#065fd4',
+            color: '#FF0000',
             cursor: 'pointer',
             width: '100%',
             marginTop: '1.5rem',
