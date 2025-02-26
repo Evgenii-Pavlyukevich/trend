@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [setIsMobile]);
 
   const handleLogout = async () => {
     try {

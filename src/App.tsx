@@ -4,7 +4,8 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Header } from './components/Header';
 import { Login } from './pages/Login';
-import { PrivateContent } from './pages/PrivateContent';
+import { NicheSelection } from './pages/NicheSelection';
+import { Results } from './pages/Results';
 
 function App() {
   return (
@@ -27,7 +28,15 @@ function App() {
                 path="/"
                 element={
                   <ProtectedRoute>
-                    <PrivateContent />
+                    <NicheSelection />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/results"
+                element={
+                  <ProtectedRoute>
+                    <Results />
                   </ProtectedRoute>
                 }
               />

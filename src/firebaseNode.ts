@@ -1,8 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getAnalytics, logEvent } from "firebase/analytics";
 import { getFirestore } from 'firebase/firestore';
-import { getPerformance } from 'firebase/performance';
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -17,12 +14,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
-export const performance = getPerformance(app);
-export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Helper function for logging events
 export const logAnalyticsEvent = (eventName: string, params?: Record<string, any>) => {
-  logEvent(analytics, eventName, params);
+  console.log(`[Analytics Event] ${eventName}:`, params);
 }; 
